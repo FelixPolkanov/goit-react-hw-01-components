@@ -1,5 +1,8 @@
-import Profile from '../components/profile'
-import user from '../user.json'
+import Profile from './profile/profile'
+import user from './profile/user.json'
+import stats from './statistics/data.json'
+import StatisticList from './statistics/StatisticList';
+
 
 
 
@@ -9,11 +12,13 @@ export const App = () => {
       style={{
         height: '100vh',
         display: 'flex',
+        flexDirection: 'column',
         justifyContent: 'center',
         alignItems: 'center',
         fontSize: 40,
         color: '#010101'
-      }}>
+    }}
+    >
       
       <Profile 
           username={user.username}
@@ -23,6 +28,9 @@ export const App = () => {
           followers={user.stats.followers}
           views={user.stats.views}
           likes={user.stats.likes}
+      />
+    
+      <StatisticList items={stats}
       />
       
        </div>
