@@ -1,8 +1,11 @@
 import Profile from './profile/profile'
 import user from './profile/user.json'
+
 import stats from './statistics/data.json'
 import StatisticList from './statistics/StatisticList';
 
+import friends from './FriendList/friends.json'
+import FriendList from './FriendList/FriendList'
 
 
 
@@ -32,6 +35,10 @@ export const App = () => {
     
       <StatisticList items={stats}
       />
+
+      <FriendList friends={friends}
+      />
+
       
        </div>
   );
