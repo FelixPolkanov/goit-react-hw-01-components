@@ -1,14 +1,14 @@
 import Profile from './Profile/Profile'
 import user from './Profile/user.json'
 
-import stats from './Statistics/data.json'
-import StatisticList from './Statistics/StatisticList';
+import stats from './Statistics1/data.json'
+import StatisticList from './Statistics1/StatisticList';
 
 import friends from './FriendList/friends.json'
 import FriendList from './FriendList/FriendList'
 
-import transactions from './TransactionHistory/transactions.json'
-import TransactionHistory from './TransactionHistory/TransactionHistory'
+import transactions from './TransactionHistory1/transactions.json'
+import TransactionHistory from './TransactionHistory1/TransactionHistory'
 
 
 
