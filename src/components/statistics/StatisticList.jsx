@@ -1,22 +1,20 @@
-import Statistic from '../statistics/statistic'
-import PropTypes from 'prop-types';
-import css from '../statistics/statistics.module.css';
 
-function StatisticList({ items, title }) { 
+import PropTypes from 'prop-types';
+import css from '../Statistics/statistics.module.css';
+
+function StatisticList({ stats, title }) { 
     return (
         <section className={css.statistics}>
             {{ title } && <h2 className={css.title}>Upload stats</h2>}
-            
-            
-            <ul className={css.stat_list}  >
+               <ul className={css.stat_list}>
                 
-            {items.map(item => (
-               
-                    <Statistic key={item.id}
-                        label={item.label}
-                        percentage={item.percentage}
-                />
-            ))}
+            {stats.map(({id, label, percentage}) => (
+        <li className={css.item} key={id}>
+            <span className={css.label}>{label}</span>
+            <span className={css.percentage}>{percentage}%</span>
+        </li>                         
+                    
+ ))}
                 
             </ul>
          </section>
@@ -25,11 +23,11 @@ function StatisticList({ items, title }) {
   
 StatisticList.propTypes = {
     title: PropTypes.string,
-    items: PropTypes.arrayOf(PropTypes.shape({
-     id: PropTypes.string.isRequired,
+    stats: PropTypes.arrayOf(PropTypes.shape({
+        id: PropTypes.string.isRequired,
+        label: PropTypes.string.isRequired,
+   percentage: PropTypes.number.isRequired,
    }))
-
-
 }
 
 export default StatisticList;

@@ -1,14 +1,14 @@
-import Profile from './profile/profile'
-import user from './profile/user.json'
+import Profile from './Profile/Profile'
+import user from './Profile/user.json'
 
-import stats from './statistics/data.json'
-import StatisticList from './statistics/StatisticList';
+import stats from './Statistics/data.json'
+import StatisticList from './Statistics/StatisticList';
 
 import friends from './FriendList/friends.json'
 import FriendList from './FriendList/FriendList'
 
 import transactions from './TransactionHistory/transactions.json'
-import TransactionHistory from './TransactionHistory/transactionHistory'
+import TransactionHistory from './TransactionHistory/TransactionHistory'
 
 
 
@@ -26,18 +26,16 @@ export const App = () => {
     }}
     >
       
-      <Profile 
+     <Profile 
           username={user.username}
           tag={user.tag}
           location={user.location}
           avatarUrl={user.avatar}
-          followers={user.stats.followers}
-          views={user.stats.views}
-          likes={user.stats.likes}
+          stats={user.stats}
       />
     
-      <StatisticList items={stats}
-      />
+      <StatisticList stats={stats}
+      /> 
 
       <FriendList friends={friends}
       />
